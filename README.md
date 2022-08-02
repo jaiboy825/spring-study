@@ -1,5 +1,12 @@
 # spring-study
-Spring study
+Spring MVC 공부   
+기초적인 CRUD -> PAGING -> SEARCH -> AUTH -> FILE UPLOAD 순으로 공부
+
+- AUTH
+- CRUD & PAGING & SEARCH
+- FILE UPLOAD & MANAGE
+- AUTH MANAGE
+- BOOTSTRAP CONNECT
 
 ## DB : MySQL
 
