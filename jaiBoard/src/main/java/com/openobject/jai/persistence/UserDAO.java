@@ -23,4 +23,6 @@ public interface UserDAO {
   public void updateUimage(String uid, String uimage) throws Exception;
   
   public void updateLoginDate(String userId) throws Exception;
+
+  public void deleteUser(String userId) throws Exception;
 }

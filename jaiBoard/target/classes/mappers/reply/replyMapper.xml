@@ -85,6 +85,10 @@
 		WHERE reply_writer =
 		#{userId}
 	</select>
+    <delete id="deleteUserReplies">
+        DELETE FROM tb_reply
+        WHERE reply_writer = #{userId}
+    </delete>
 
 	<resultMap id="ArticleResultMap" type="ArticleVO">
 		<id property="article_no" column="article_no" />

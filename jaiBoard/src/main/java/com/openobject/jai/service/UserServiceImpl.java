@@ -59,5 +59,10 @@ public class UserServiceImpl implements UserService {
   public void modifyUimage(String uid, String uimage) throws Exception {
     userDAO.updateUimage(uid, uimage);
   }
+
+  @Override
+  public void deleteUser(String uid) throws Exception {
+    userDAO.deleteUser(uid);
+  }
   
 }

@@ -71,7 +71,11 @@
 		SET user_login_date = NOW()
 		WHERE user_id = #{userId}
 	</update>
-
+	
+    <delete id="deleteUser">
+        DELETE FROM tb_user
+        WHERE user_id = #{userId}
+    </delete>
 	<resultMap id="userVOResultMap" type="UserVO">
 		<id property="userId" column="user_id" />
 		<result property="userPw" column="user_pw" />

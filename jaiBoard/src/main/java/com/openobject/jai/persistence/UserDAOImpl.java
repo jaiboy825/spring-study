@@ -16,7 +16,8 @@ import com.openobject.jai.domain.UserVO;
 public class UserDAOImpl implements UserDAO {
   
   private static final String NAMESPACE = "com.openobject.jai.mappers.user.UserMapper";
-  
+  private static final String ARTICLE = "com.openobject.jai.mappers.article.ArticleMapper";
+  private static final String REPLY = "com.openobject.jai.mappers.reply.ReplyMpper";
   private final SqlSession sqlSession;
   
   @Inject
@@ -34,7 +35,7 @@ public class UserDAOImpl implements UserDAO {
   public UserVO login(LoginDTO loginDTO) throws Exception {
     return sqlSession.selectOne(NAMESPACE + ".login", loginDTO);
   }
-
+  
   @Override
   public void keepLogin(String userId, String sessionid, Date sessionLimit) throws Exception {
     Map<String, Object> paramMap = new HashMap<String, Object>();
@@ -44,27 +45,27 @@ public class UserDAOImpl implements UserDAO {
     
     sqlSession.update(NAMESPACE + ".keepLogin", paramMap);
   }
-
+  
   @Override
   public UserVO checkuserWithSessionKey(String value) throws Exception {
     return sqlSession.selectOne(NAMESPACE + ".checkUserWithSessionKey", value);
   }
-
+  
   @Override
   public void updateUser(UserVO userVO) throws Exception {
     sqlSession.update(NAMESPACE + ".updateUser", userVO);
   }
-
+  
   @Override
   public UserVO getUser(String userId) throws Exception {
     return sqlSession.selectOne(NAMESPACE + ".getUser", userId);
   }
-
+  
   @Override
   public void updatePw(UserVO userVO) throws Exception {
     sqlSession.update(NAMESPACE + ".updatePw", userVO);
   }
-
+  
   @Override
   public void updateUimage(String userId, String userImg) throws Exception {
     Map<String, Object> paramMap = new HashMap<String, Object>();
@@ -72,10 +73,17 @@ public class UserDAOImpl implements UserDAO {
     paramMap.put("userImg", userImg);
     sqlSession.update(NAMESPACE + ".updateUimage", paramMap);
   }
-
+  
   @Override
   public void updateLoginDate(String userId) throws Exception {
     sqlSession.update(NAMESPACE + ".updateLoginDate", userId);
+  }
+  
+  @Override
+  public void deleteUser(String userId) throws Exception {
+    sqlSession.delete(NAMESPACE + ".deleteUser", userId);
+    sqlSession.delete(REPLY + ".deleteUserReplies", userId);
+    sqlSession.delete(ARTICLE + ".deleteUserArticles", userId);
   }
   
 }

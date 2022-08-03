@@ -199,6 +199,87 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							</div>
 						</div>
 					</div>
+					<div class="modal fade" id="userInfoModal" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h4 class="modal-title">회원 정보 수정</h4>
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label for="user_id">아이디</label> <input class="form-control"
+											id="user_id" name="user_id">
+									</div>
+									<div class="form-group">
+										<label for="user_name">이름</label> <input class="form-control"
+											id="user_name" name="user_name">
+									</div>
+									<div class="form-group">
+										<label for="user_email">이메일</label> <input class="form-control"
+											id="user_email" name="user_email">
+									</div>
+									<div class="form-group">
+										<label for="user_pw">비밀번호 확인</label> <input class="form-control"
+											id="user_pw" name="user_pw">
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default pull-left"
+										data-dismiss="modal">닫기</button>
+									<button type="button" class="btn btn-success modalModBtn">수정</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal fade" id="userPwModal" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h4 class="modal-title">회원 정보 수정</h4>
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label for="old_user_pw">이전 비밀번호</label> <input class="form-control"
+											id="old_user_pw" name="old_user_pw">
+									</div>
+									<div class="form-group">
+										<label for="new_user_pw">새 비밀번호</label> <input class="form-control"
+											id="new_user_pw" name="new_user_pw">
+									</div>
+									<div class="form-group">
+										<label for="new_user_pw_chk">새 비밀번호 확인</label> <input
+											class="form-control" id="new_user_pw_chk" name="new_user_pw_chk">
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default pull-left"
+										data-dismiss="modal">닫기</button>
+									<button type="button" class="btn btn-success modalModBtn">변경</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal fade" id="userOutModal" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">회원 탈퇴</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="text-center">정말로 삭제하시겠습니까 ?</div>
+                                    <p>되돌릴 수 없습니다.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default pull-left"
+                                        data-dismiss="modal">닫기</button>
+                                    <button type="button" class="btn btn-danger modalDelBtn">삭제</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 				</div>
 				<!-- /.container-fluid -->
 			</div>

@@ -28,7 +28,7 @@
 				</div>
 				<div class="info">
 					<%-- Status --%>
-					<a href="#"><i class="d-block"></i> ${login.userName}</a>
+					<a href="${path}/user/profile"><i class="d-block"></i> ${login.userName}</a>
 				</div>
 			</c:if>
 		</div>

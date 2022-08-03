@@ -21,4 +21,6 @@ public interface UserService {
   public void modifyPw(UserVO userVO) throws Exception;
   
   public void modifyUimage(String uid, String uimage) throws Exception;
+  
+  public void deleteUser (String uid) throws Exception;
 }

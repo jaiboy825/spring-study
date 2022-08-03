@@ -155,6 +155,10 @@
 		WHERE writer = #{userId}
 		ORDER BY article_no DESC, regdate DESC
 	</select>
+	<delete id="deleteUserArticles">
+	   DELETE FROM tb_article
+	   WHERE writer = #{userId}
+	</delete>
 
 	<sql id="search">
 		<if test="searchType != null">
