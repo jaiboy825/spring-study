@@ -113,7 +113,6 @@ public class UserInfoController {
     model.addAttribute("userBoardList", userBoardList);
     model.addAttribute("userReplies", userReplies);
     
-    System.out.println("딱 봐도 여기다");
     return "user/profile";
   }
   

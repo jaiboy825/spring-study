@@ -209,7 +209,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								<div class="modal-body">
 									<div class="form-group">
 										<label for="user_id">아이디</label> <input class="form-control"
-											id="user_id" name="user_id">
+											id="user_id" name="user_id" value="${login.userId}" readonly>
 									</div>
 									<div class="form-group">
 										<label for="user_name">이름</label> <input class="form-control"
@@ -262,24 +262,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						</div>
 					</div>
 					<div class="modal fade" id="userOutModal" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">회원 탈퇴</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="text-center">정말로 삭제하시겠습니까 ?</div>
-                                    <p>되돌릴 수 없습니다.</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default pull-left"
-                                        data-dismiss="modal">닫기</button>
-                                    <button type="button" class="btn btn-danger modalDelBtn">삭제</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h4 class="modal-title">회원 탈퇴</h4>
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+								</div>
+								<div class="modal-body">
+									<div class="text-center">정말로 삭제하시겠습니까 ?</div>
+									<p>되돌릴 수 없습니다.</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default pull-left"
+										data-dismiss="modal">닫기</button>
+									<button type="button" class="btn btn-danger modalDelBtn">삭제</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<!-- /.container-fluid -->
 			</div>
@@ -368,7 +368,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         }
         $("#userImageForm").submit();
       });
-      var param = {
+      $(".modalDelBtn").on("click", function() {
+        $("userDeleteForm").submit();
+      });
+
+      $("modalModBtn").on("click", function() {
+        $("userModForm").submit();
+      });
+      param = {
         "language" : {
         "lengthMenu" : "_MENU_ 개씩 보기",
         "zeroRecords" : "내용이 없습니다.",
